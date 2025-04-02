@@ -3,3 +3,5 @@ title: "About"
 ---
 
 This will hold some information about STAT 541 and this final project, but right now is just empty.
+
+<!-- https://blog.curiodata.pro/posts/02-quarto-cloudflare/ -->

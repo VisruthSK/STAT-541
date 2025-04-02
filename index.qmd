@@ -5,3 +5,5 @@ title: "STAT 541 Portfolio"
 This is the home of my STAT 541 portfolio, and will be built out over the quarter. 
 
 For now, it is empty and bland.
+
+Watch this space!
