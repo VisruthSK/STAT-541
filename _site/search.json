@@ -1,16 +1,16 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "STAT 541 Portfolio",
-    "section": "",
-    "text": "This is the home of my STAT 541 portfolio, and will be built out over the quarter.\nFor now, it is empty and bland."
-  },
-  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
     "text": "This will hold some information about STAT 541 and this final project, but right now is just empty."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "STAT 541 Portfolio",
+    "section": "",
+    "text": "This is the home of my STAT 541 portfolio, and will be built out over the quarter.\nFor now, it is empty and bland.\nWatch this space!"
   }
 ]
