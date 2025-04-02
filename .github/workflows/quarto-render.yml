@@ -3,11 +3,15 @@ name: Render Quarto Project
 on:
   push:
     branches: [main, master]
+  pull_request:
+    branches: [main, master]
   workflow_dispatch:
 
 jobs:
   quarto-render:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
@@ -20,3 +24,11 @@ jobs:
         with:
           to: html
           path: .
+          
+      - name: Commit and push
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add _site/
+          git commit -m "Render Quarto site" || echo "No changes"
+          git push
