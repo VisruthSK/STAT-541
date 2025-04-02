@@ -2,4 +2,4 @@
 title: "About"
 ---
 
-About this site
+This will hold some information about STAT 541 and this final project, but right now is just empty.
