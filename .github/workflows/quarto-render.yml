@@ -1,32 +1,32 @@
-name: Render Quarto Project
+name: Render and Deploy Quarto Project to Cloudflare Pages
 
 on:
   push:
-    branches: [main, master]
+    branches: main
   workflow_dispatch:
 
 jobs:
-  quarto-render:
+  build-and-deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
+      deployments: write
     steps:
       - name: Check out repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
-        
+
       - name: Render Quarto Project
         uses: quarto-dev/quarto-actions/render@v2
         with:
           to: html
-          path: .
-          
-      - name: Commit and push
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add _site/
-          git commit -m "Render Quarto site" || echo "No changes"
-          git push
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: 'stat-541'
+          directory: '_site'
