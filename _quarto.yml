@@ -12,13 +12,10 @@ website:
 
 format:
   html:
-    theme:
-      - cosmo
-      - brand
+    # TODO: add dark theme
+    theme: lux 
     css: styles.css
     toc: true
 
 execute:
   freeze: auto
-
-theme: lux
