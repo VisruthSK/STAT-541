@@ -24,6 +24,9 @@ jobs:
 
       - name: Install R
         uses: r-lib/actions/setup-r@v2
+        # TODO: check this
+        with:
+          cache-version: 1
 
       - name: Setup renv
         uses: r-lib/actions/setup-renv@v2
@@ -42,6 +45,7 @@ jobs:
 
       - name: Copy Dashboard HTML
         run: |
+          mkdir -p "_site/20250418_static_dashboard/"
           cp "dashboard_content/dashboard.html" "_site/20250418_static_dashboard/index.html"
         shell: bash
 
