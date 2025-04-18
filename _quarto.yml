@@ -2,18 +2,29 @@ project:
   type: website
 
 website:
-  title: "STAT 541 Portfolio"
+  title: "STAT 541"
   navbar:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      # - about.qmd
       - portfolio.qmd
-
+    right:
+      - icon: bluesky
+        href: https://bsky.app/profile/visruth.com
+        aria-label: Bluesky
+      - icon: github
+        href: https://github.com/VisruthSK
+        aria-label: GitHub
+      - icon: linkedin
+        href: https://www.linkedin.com/in/visruthsk/
+        aria-label: LinkedIn
 format:
   html:
     # TODO: add dark theme
-    theme: lux 
+    theme:
+      light: lux
+      # dark: [lux, dark.scss]
     css: styles.css
     toc: true
 

@@ -1,0 +1,15 @@
+{
+  "hash": "419a803b91c6326d91fc3f9bc31493e9",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: Trust in Science in the 2018 Global Health Monitor Report\ndate: \"2025.04.18\"\n---\n\nThis post is yet to be written. This lab was a static dashboard based on the 2018 Wellcome Health data.\n\nFind the dashboard at <https://stat541.visruth.com/static_dashboard>.\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nprint(\"helllo\")\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] \"helllo\"\n```\n\n\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
