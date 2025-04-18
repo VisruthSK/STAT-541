@@ -19,8 +19,8 @@ jobs:
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
-        with:
-          version: latest
+        # with:
+        #   version: latest
 
       - name: Setup R, renv, and cache packages
         uses: r-lib/actions/setup-r-dependencies@v2
