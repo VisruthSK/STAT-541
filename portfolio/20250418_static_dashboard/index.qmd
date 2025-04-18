@@ -1,0 +1,8 @@
+---
+title: Trust in Science in the 2018 Global Health Monitor Report
+date: "2025.04.18"
+---
+
+This post is yet to be written. This lab was a static dashboard based on the 2018 Wellcome Health data.
+
+Find the dashboard at <https://stat541.visruth.com/static_dashboard>.

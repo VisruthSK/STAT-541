@@ -20,3 +20,5 @@ format:
 
 execute:
   freeze: auto
+
+theme: lux
