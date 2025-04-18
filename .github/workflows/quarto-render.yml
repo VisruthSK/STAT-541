@@ -12,6 +12,8 @@ jobs:
       contents: read
       deployments: write
     env:
+      DASHBOARD_REPO_OWNER: VisruthSK
+      DASHBOARD_REPO_NAME: lab-3
       RENV_PATHS_ROOT: ~/.cache/R/renv
     steps:
       - name: Check out repository
@@ -30,6 +32,18 @@ jobs:
         uses: quarto-dev/quarto-actions/render@v2
         with:
           to: html
+
+      - name: Check out dashboard
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.DASHBOARD_REPO_OWNER }}/${{ env.DASHBOARD_REPO_NAME }}
+          path: dashboard_content
+          depth: 1        
+
+      - name: Copy Dashboard HTML
+        run: |
+          cp "dashboard_content/dashboard.html" "_site/static_dashboard.html"
+        shell: bash
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
