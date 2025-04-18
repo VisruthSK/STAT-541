@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "test.html",
+    "href": "test.html",
+    "title": "Testing Workflow with Renv",
+    "section": "",
+    "text": "This is a test of my current GHA workflow to manage dependencies and rendering.\n\nlibrary(dplyr)\n\nmtcars |&gt;\n  filter(mpg &gt;= 15) |&gt;\n  group_by(cyl) |&gt;\n  summarize(mpg_mean = mean(mpg), mpg_sd = sd(mpg))\n\n# A tibble: 3 × 3\n    cyl mpg_mean mpg_sd\n  &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt;\n1     4     26.7   4.51\n2     6     19.7   1.45\n3     8     16.5   1.58\n\n\nCode is taken from my pipe post"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
@@ -11,6 +18,6 @@
     "href": "index.html",
     "title": "STAT 541 Portfolio",
     "section": "",
-    "text": "This is the home of my STAT 541 portfolio, and will be built out over the quarter.\nFor now, it is empty and bland.\nWatch this space!"
+    "text": "This is the home of my STAT 541 portfolio, and will be built out over the quarter.\nWatch this space!"
   }
 ]

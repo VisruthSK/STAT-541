@@ -1,0 +1,17 @@
+---
+title: Testing Workflow with Renv
+---
+
+This is a test of my current GHA workflow to manage dependencies and rendering.
+
+```{r}
+#| warning: false
+library(dplyr)
+
+mtcars |>
+  filter(mpg >= 15) |>
+  group_by(cyl) |>
+  summarize(mpg_mean = mean(mpg), mpg_sd = sd(mpg))
+```
+
+Code is taken from my [pipe post](https://www.visruth.com/blog/pipe/)

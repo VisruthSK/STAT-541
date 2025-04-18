@@ -1,1 +1,12 @@
 /.quarto/
+_site/
+
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+renv/library/
+renv/staging/
+renv/cellar/
+renv/sandbox/
