@@ -38,11 +38,11 @@ jobs:
         with:
           repository: ${{ env.DASHBOARD_REPO_OWNER }}/${{ env.DASHBOARD_REPO_NAME }}
           path: dashboard_content
-          depth: 1        
+          fetch-depth: 1        
 
       - name: Copy Dashboard HTML
         run: |
-          cp "dashboard_content/dashboard.html" "_site/static_dashboard.html"
+          cp "dashboard_content/dashboard.html" "_site/20250418_static_dashboard/index.html"
         shell: bash
 
       - name: Deploy to Cloudflare Pages

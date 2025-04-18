@@ -1,0 +1,8 @@
+---
+title: "STAT 541 Portfolio"
+listing: 
+  contents: portfolio
+  type: grid
+  sort: "date desc"
+  categories: true 
+---
