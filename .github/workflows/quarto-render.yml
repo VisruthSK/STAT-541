@@ -1,4 +1,4 @@
-name: Render and Deploy Quarto Project to Cloudflare Pages
+name: Deploy Portfolio
 
 on:
   push:
@@ -11,12 +11,8 @@ jobs:
     permissions:
       contents: read
       deployments: write
-    env:
-      DASHBOARD_REPO_OWNER: VisruthSK
-      DASHBOARD_REPO_NAME: lab-3
-      RENV_PATHS_ROOT: ~/.cache/R/renv
     steps:
-      - name: Check out repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Set up Quarto
@@ -38,7 +34,7 @@ jobs:
       - name: Check out dashboard
         uses: actions/checkout@v4
         with:
-          repository: ${{ env.DASHBOARD_REPO_OWNER }}/${{ env.DASHBOARD_REPO_NAME }}
+          repository: VisruthSK/lab-3
           path: dashboard_content
 
       - name: Copy Dashboard HTML
