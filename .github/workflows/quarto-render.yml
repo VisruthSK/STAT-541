@@ -51,6 +51,7 @@ jobs:
       - name: Serve interactive dashboard
         run: |
           cp "interactive_dashboard/dashboard.html" "_site/interactive_dashboard.html"
+          mkdir -p _site/data
           cp "interactive_dashboard/data/wellcome.csv" "_site/data/wellcome.csv"
         shell: bash
 
