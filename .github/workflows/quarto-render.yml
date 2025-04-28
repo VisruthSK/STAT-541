@@ -31,15 +31,26 @@ jobs:
         with:
           to: html
 
-      - name: Check out dashboard
+      - name: Check out static dashboard
         uses: actions/checkout@v4
         with:
           repository: VisruthSK/lab-3
-          path: dashboard_content
+          path: static_dashboard
 
-      - name: Copy Dashboard HTML
+      - name: Serve static dashboard
         run: |
-          cp "dashboard_content/dashboard.html" "_site/static_dashboard.html"
+          cp "static_dashboard/dashboard.html" "_site/static_dashboard.html"
+        shell: bash
+
+      - name: Check out interactive dashboard
+        uses: actions/checkout@v4
+        with:
+          repository: VisruthSK/lab-4
+          path: interactive_dashboard
+
+      - name: Serve interactive dashboard
+        run: |
+          cp "interactive_dashboard/dashboard.html" "_site/interactive_dashboard.html"
         shell: bash
 
       - name: Deploy to Cloudflare Pages

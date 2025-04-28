@@ -1,0 +1,8 @@
+---
+title: Trust in Science in the 2018 Global Health Monitor Report (Quarto Dashboards (Interactive))
+date: "2025.04.27"
+---
+
+This post is yet to be written. This lab was a interactive dashboard based on the 2018 Wellcome Health data using webR for interactivity.
+
+Find the dashboard at <https://stat541.visruth.com/interactive_dashboard>.
