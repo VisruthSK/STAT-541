@@ -1,11 +1,11 @@
 ---
 title: "Lab 1: Refresher of Quarto and Friends" 
+description: "Quarto and tidyverse basics"
 date: "2025.04.07"
 execute: 
   echo: true
 warning: false
 ---
-
 
 ```{r}
 #| label: packages-setup

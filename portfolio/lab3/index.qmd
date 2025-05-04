@@ -1,5 +1,7 @@
 ---
 title: "Lab 3: Static Quarto Dashboard" 
+description: "An electric dashboard"
+image: thumbnail.png
 date: "2025.04.21"
 ---
 
@@ -8,6 +10,5 @@ This is an static dashboard of data from the 2018 Wellcome Health Report. This d
 <iframe src="../../../static_dashboard.html" width="100%" height="800px" style="border:1px solid #ccc;">
   <p>Your browser does not support iframes. You can view the content <a href="../../../static_dashboard.html">here</a>.</p>
 </iframe>
-
 
 Find the dashboard at <https://stat541.visruth.com/static_dashboard>.
