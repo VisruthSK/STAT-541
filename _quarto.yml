@@ -1,5 +1,8 @@
 project:
   type: website
+  preview:
+    port: 4200
+    browser: false
 
 website:
   title: "STAT 541"
@@ -10,23 +13,31 @@ website:
       # - about.qmd
       - portfolio.qmd
     right:
-      - icon: bluesky
+      - icon: globe
+        href: https://visruth.com
+        aria-label: website
+        target: _blank
+      - icon: twitter
         href: https://bsky.app/profile/visruth.com
         aria-label: Bluesky
+        target: _blank
       - icon: github
         href: https://github.com/VisruthSK
         aria-label: GitHub
+        target: _blank
       - icon: linkedin
         href: https://www.linkedin.com/in/visruthsk/
         aria-label: LinkedIn
+        target: _blank
+
 format:
   html:
-    # TODO: add dark theme
     theme:
+      dark: [lux, dark.scss]
       light: lux
-      # dark: [lux, dark.scss]
     css: styles.css
     toc: true
+
 
 execute:
   freeze: auto

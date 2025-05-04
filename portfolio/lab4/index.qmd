@@ -1,0 +1,12 @@
+---
+title: "Lab 4: Interactive Quarto Dashboard"
+date: "2025.04.27"
+---
+
+<!-- TODO: write this -->
+
+<iframe src="../../../interactive_dashboard.html" width="100%" height="800px" style="border:1px solid #ccc;">
+  <p>Your browser does not support iframes. You can view the content <a href="../../../interactive_dashboard.html">here</a>.</p>
+</iframe>
+
+This dashboard is hosted at <https://stat541.visruth.com/interactive_dashboard>.

@@ -1,0 +1,4 @@
+---
+title: "Lab 2: Advanced Visualizations" 
+date: "2025.04.14"
+---

@@ -1,0 +1,391 @@
+/*-- scss:defaults --*/
+
+// Lux Dark Mode Override for Quarto
+// Defines variables overrides for the built-in lux theme.
+// These variables take precedence over lux.scss and Bootstrap defaults
+// when used in Quarto via `theme: [lux, lux_dark.scss]`
+
+// Dark mode color adjustments
+$dark-bg: #181a20;
+$light-text: #f8f9fa; // Use gray-100 for main text
+$medium-text: #adb5bd; // Use gray-500 for secondary text
+$dark-border: rgba(255, 255, 255, 0.1); // Lighter border for dark bg
+$light-border: rgba(255, 255, 255, 0.15); // Slightly more visible border
+
+// Override default variables (without !default to ensure they take precedence)
+$white: $dark-bg;
+$gray-100: #2a2d35;
+$gray-200: #3c4048; // Used for input-bg in base lux
+$gray-300: #50555e; // Used for input-disabled-bg, input-group-addon-bg in base lux
+$gray-400: #6e747e;
+$gray-500: #adb5bd;
+$gray-600: #ced4da; // Used for form-select-disabled-color in base lux
+$gray-700: #e0e1e2; // Used for body-color in base lux
+$gray-800: #f0f1f2; // Used for dark in base lux
+$gray-900: #f8f9fa; // Used for primary, headings-color in base lux
+$black: $light-text;
+
+// Semantic colors
+$primary: $gray-100; // Use a darker gray for primary elements on dark bg (was $gray-900)
+$secondary: $gray-800; // Use a very light gray for secondary elements (was $white)
+$success: #4bbf73;
+$info: #1f9bcf;
+$warning: #f0ad4e;
+$danger: #d9534f;
+$light: $gray-300; // Redefine light for dark mode context (was $white)
+$dark: $gray-800; // Redefine dark for dark mode context (was $gray-800 -> now light gray)
+
+// Body
+$body-bg: $dark-bg;
+$body-color: $gray-700; // Use our overridden light $gray-700
+
+// Headings
+$headings-color: $gray-900; // Use our overridden light $gray-900
+
+// Tables
+$table-color: $body-color; // Match body text
+$table-bg: transparent;
+$table-border-color: $dark-border;
+$table-striped-bg: rgba(255, 255, 255, 0.03);
+$table-striped-color: $table-color;
+$table-hover-bg: rgba(255, 255, 255, 0.05);
+$table-hover-color: $table-color;
+$table-head-bg: $gray-200; // Use our overridden darker $gray-200
+$table-head-color: $headings-color; // Match heading color
+$table-dark-bg: $gray-200;
+$table-dark-color: $light-text;
+$table-dark-border-color: lighten($dark-border, 5%);
+$table-dark-striped-bg: lighten($table-striped-bg, 2%);
+$table-dark-striped-color: $table-dark-color;
+$table-dark-hover-bg: lighten($table-hover-bg, 3%);
+$table-dark-hover-color: $table-dark-color;
+
+// Buttons + Forms (Leveraging overrides for $gray-* )
+$input-bg: $gray-200; // Use our overridden darker $gray-200
+$input-disabled-bg: $gray-300; // Use our overridden darker $gray-300
+$input-color: $light-text;
+$input-border-color: $dark-border;
+$input-placeholder-color: $medium-text;
+$input-group-addon-bg: $gray-300; // Use our overridden darker $gray-300
+$input-group-addon-color: $light-text;
+$input-group-addon-border-color: $input-border-color;
+$form-select-disabled-color: $gray-600; // Use our overridden lighter $gray-600
+$form-select-disabled-bg: $input-disabled-bg;
+
+// Dropdowns
+$dropdown-bg: $gray-100;
+$dropdown-color: $body-color;
+$dropdown-border-color: $dark-border;
+$dropdown-divider-bg: $dark-border;
+$dropdown-link-color: $body-color;
+$dropdown-link-hover-color: $light-text;
+$dropdown-link-hover-bg: $gray-200;
+$dropdown-link-active-color: $light-text; // Ensure active link text is light
+$dropdown-link-active-bg: rgba($primary, 0.5); // Use semi-transparent primary
+$dropdown-link-disabled-color: $gray-500; // Use our overridden mid $gray-500
+$dropdown-header-color: $gray-600; // Use our overridden lighter $gray-600
+
+// Navs
+$nav-link-color: $medium-text;
+$nav-link-hover-color: $light-text;
+$nav-link-disabled-color: $gray-500;
+$nav-tabs-border-color: $dark-border;
+$nav-tabs-link-hover-border-color: $gray-200 $gray-200 $nav-tabs-border-color;
+$nav-tabs-link-active-color: $light-text;
+$nav-tabs-link-active-bg: $body-bg;
+$nav-tabs-link-active-border-color: $gray-300 $gray-300 $nav-tabs-link-active-bg;
+
+// Navbar
+// Use navbar-dark class for dark background navbars
+$navbar-dark-color: $light-text; // Changed: Use full light text color
+$navbar-dark-hover-color: $light-text;
+$navbar-dark-active-color: $light-text;
+$navbar-dark-disabled-color: rgba($light-text, .25);
+$navbar-dark-toggler-border-color: rgba($light-text, .1);
+// Keep $navbar-light-* variables as they are defined in lux/bootstrap
+// They will use our inverted $black/$gray values, resulting in a dark-text navbar
+// suitable for placing on a light background section if needed within the dark theme.
+$navbar-light-color: rgba($black, .6); // Adjust opacity slightly from lux default
+$navbar-light-hover-color: $black; // Use our light $black override
+$navbar-light-active-color: $black; // Use our light $black override
+$navbar-light-disabled-color: rgba($black, .3);
+$navbar-light-toggler-border-color: rgba($black, .1);
+
+
+// Pagination (adjusting borders)
+$pagination-color: $light-text;
+$pagination-bg: $gray-200;
+$pagination-border-width: 1px; // Add border width
+$pagination-border-color: $dark-border; // Use dark border color
+$pagination-hover-color: $light-text;
+$pagination-hover-bg: $gray-300;
+$pagination-hover-border-color: $light-border; // Lighter border on hover
+$pagination-active-color: $light-text;
+$pagination-active-bg: $primary; // Use our adjusted primary
+$pagination-active-border-color: $primary;
+$pagination-disabled-color: $gray-500;
+$pagination-disabled-bg: $gray-100;
+$pagination-disabled-border-color: $dark-border;
+
+
+// Cards
+$card-bg: $gray-100;
+$card-border-color: $dark-border;
+$card-cap-bg: $gray-200;
+$card-color: inherit;
+
+// Modals
+$modal-content-bg: $body-bg;
+$modal-content-border-color: $dark-border;
+$modal-header-border-color: $dark-border;
+
+// Progress bars
+$progress-bg: $gray-200;
+$progress-bar-color: $light-text;
+
+// List group
+$list-group-bg: $gray-100;
+$list-group-border-color: $dark-border;
+$list-group-hover-bg: $gray-200;
+$list-group-active-color: $light-text;
+$list-group-active-bg: $primary;
+$list-group-active-border-color: $list-group-active-bg;
+$list-group-disabled-color: $gray-500;
+$list-group-disabled-bg: $list-group-bg;
+$list-group-action-color: $medium-text;
+$list-group-action-hover-color: $light-text;
+$list-group-action-active-color: $body-color; // Use body color for active action item text
+$list-group-action-active-bg: $gray-300;
+
+
+// Breadcrumbs
+$breadcrumb-bg: $gray-200;
+$breadcrumb-color: $medium-text;
+$breadcrumb-active-color: $light-text;
+$breadcrumb-divider-color: $gray-500;
+
+
+// Close button
+$btn-close-color: $light-text;
+
+
+// Code
+$code-color: #e83e8c; // Keep pinkish color for code
+
+
+/*-- scss:rules --*/
+
+// Add specific CSS rule overrides needed for the dark theme,
+// especially where base lux rules use hardcoded values or
+// where variable overrides might need refinement.
+
+// Ensure background and text colors have sufficient contrast
+body {
+
+    // Ensure links are clearly visible if not covered by component vars
+    a {
+        color: $info; // Use info color for links by default
+
+        &:hover {
+            color: lighten($info, 10%);
+        }
+    }
+}
+
+// Override hardcoded border in lux's .bg-light rule
+.bg-light {
+    border-color: $dark-border !important; // Use dark mode border for .bg-light containers
+}
+
+// Adjust badge text color for dark backgrounds if needed
+// The base lux rule uses `$dark` for text color on secondary/light badges.
+// Our overridden `$dark` is light gray, which should work on our dark `$secondary`/`$light` backgrounds.
+// If contrast is poor, uncomment and adjust:
+// .badge.bg-secondary,
+// .badge.bg-light {
+//   color: $dark-bg !important; // Force dark text on these light badges
+// }
+.navbar {
+
+    // Target the brand link/text
+    .navbar-brand {
+        color: $medium-text !important; // Use medium grey
+
+        &:hover,
+        &:focus {
+            color: $light-text !important; // Use light text for hover/focus
+        }
+    }
+
+    // Target the main navigation links
+    .navbar-nav .nav-link {
+        color: $medium-text !important; // Use medium grey
+
+        &:hover,
+        &:focus {
+            color: $light-text !important; // Use light text for hover/focus
+        }
+
+        // Ensure active links are also distinct (using light text here)
+        &.active {
+            color: $light-text !important;
+        }
+
+        // Ensure disabled links are appropriately styled (based on medium grey)
+        &.disabled {
+            color: rgba($medium-text, .5) !important; // Adjust opacity based on medium grey
+        }
+    }
+
+    // Target general text elements within the navbar
+    .navbar-text {
+        color: $medium-text !important; // Use medium grey
+    }
+
+    // Target the toggler button icon
+    .navbar-toggler {
+        color: rgba($medium-text, .75) !important; // Toggler text/border based on medium grey
+        border-color: rgba($medium-text, .2) !important;
+    }
+
+    .navbar-toggler-icon {
+        // Keep the filter to make the icon light, grey tint comes from surrounding elements
+        filter: invert(1) grayscale(100%) brightness(1.5);
+        // If you want the icon itself to be grey, you might need a different SVG or filter approach
+    }
+
+    // Target dropdown toggles specifically if needed
+    .nav-item.dropdown>.nav-link {
+        color: $medium-text !important; // Use medium grey
+
+        &:hover,
+        &:focus {
+            color: $light-text !important; // Use light text for hover/focus
+        }
+    }
+}
+
+.quarto-title-block .quarto-title,
+// Common container class for title
+h1.title // Fallback if title class is directly on h1
+
+    {
+    color: $medium-text !important; // Use the same grey as navbar links
+}
+
+// --- End Force Grey Navbar Text ---
+
+
+// Add specific CSS rule overrides needed for the dark theme,
+// especially where base lux rules use hardcoded values or
+// where variable overrides might need refinement.
+
+// Ensure background and text colors have sufficient contrast
+body {
+
+    // Ensure links are clearly visible if not covered by component vars
+    a {
+        color: $info; // Use info color for links by default
+
+        &:hover {
+            color: lighten($info, 10%);
+        }
+    }
+}
+
+// Override hardcoded border in lux's .bg-light rule
+.bg-light {
+    border-color: $dark-border !important; // Use dark mode border for .bg-light containers
+}
+
+// Ensure outline buttons have sufficient contrast
+.btn-outline-secondary {
+    color: $gray-600; // Uses our overridden light $gray-600
+    border-color: $gray-600; // Uses our overridden light $gray-600
+
+    &:not([disabled]):not(.disabled):hover,
+    &:not([disabled]):not(.disabled):focus,
+    &:not([disabled]):not(.disabled):active {
+        color: $dark-bg; // Use dark text on hover/active
+        background-color: $gray-600; // Use the light border color as background
+        border-color: $gray-600;
+    }
+}
+
+// Ensure tables using .table class have appropriate text color
+.table {
+    color: $table-color; // Ensure table text color uses the variable
+}
+
+// Close button override (if needed globally for dark mode)
+.btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+// Add specific CSS rule overrides needed for the dark theme,
+// especially where base lux rules use hardcoded values or
+// where variable overrides might need refinement.
+
+// Ensure background and text colors have sufficient contrast
+body {
+
+    // Ensure links are clearly visible if not covered by component vars
+    a {
+        color: $info; // Use info color for links by default
+
+        &:hover {
+            color: lighten($info, 10%);
+        }
+    }
+}
+
+// Override hardcoded border in lux's .bg-light rule
+.bg-light {
+    border-color: $dark-border !important; // Use dark mode border for .bg-light containers
+}
+
+// Ensure outline buttons have sufficient contrast
+.btn-outline-secondary {
+    color: $gray-600; // Uses our overridden light $gray-600
+    border-color: $gray-600; // Uses our overridden light $gray-600
+
+    &:not([disabled]):not(.disabled):hover,
+    &:not([disabled]):not(.disabled):focus,
+    &:not([disabled]):not(.disabled):active {
+        color: $dark-bg; // Use dark text on hover/active
+        background-color: $gray-600; // Use the light border color as background
+        border-color: $gray-600;
+    }
+}
+
+// Ensure tables using .table class have appropriate text color
+.table {
+    color: $table-color; // Ensure table text color uses the variable
+}
+
+// Close button override (if needed globally for dark mode)
+// Moved from navbar specific rule for broader application
+.btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+// Ensure outline buttons have sufficient contrast
+.btn-outline-secondary {
+    color: $gray-600; // Uses our overridden light $gray-600
+    border-color: $gray-600; // Uses our overridden light $gray-600
+
+    &:not([disabled]):not(.disabled):hover,
+    &:not([disabled]):not(.disabled):focus,
+    &:not([disabled]):not(.disabled):active {
+        color: $dark-bg; // Use dark text on hover/active
+        background-color: $gray-600; // Use the light border color as background
+        border-color: $gray-600;
+    }
+}
+
+// Other outline buttons might need similar adjustments if contrast is poor
+
+// Ensure tables using .table class have appropriate text color
+.table {
+    color: $table-color; // Ensure table text color uses the variable
+}
