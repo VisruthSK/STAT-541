@@ -26,7 +26,9 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libproj-dev proj-data proj-bin libgdal-dev
+          sudo apt-get install -y \
+            libproj-dev proj-data proj-bin libgdal-dev \
+            libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev
         shell: bash
 
       - name: Setup renv
