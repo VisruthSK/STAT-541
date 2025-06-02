@@ -2,7 +2,7 @@
 title: "Lab 4: Interactive Quarto Dashboard"
 description: "A dynamic duo: webR and Quarto"
 image: thumbnail.png
-date: "2025.04.27"
+date: "2025.04.28"
 ---
 
 An interactive counterpart to my static dashboard, this one uses `webR` for client-side interactivity. See a bit more on [my blog post](https://www.visruth.com/blog/20250503-01/).

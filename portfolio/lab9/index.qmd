@@ -1,0 +1,84 @@
+---
+title: "Lab 9"
+author: "Visruth"
+description: "Code is Art; Art from Code"
+date: "2025.06.02"
+warning: false
+code-fold: true
+---
+
+# Polar Moon
+
+```{r}
+library(tidyverse)
+
+penguins |>
+  drop_na() |>
+  ggplot(aes(x = bill_len, y = flipper_len, color = species)) +
+  geom_point(size = 3) +
+  geom_point(size = 1, color = "black", alpha = 0.3) +
+  coord_polar() +
+  theme_void() +
+  scale_color_brewer() +
+  theme(legend.position = "none")
+```
+
+Penguins huddle tight in the arctic as chilly winds softly breath cold whispers into blue-black ears. _Polar Moon_ is a representation of the trials and tribulations of the arctic, serving as a reminder of the harshness of the outdoors and the warmth of community. The penguins queue into crescents, swaddling their kin--though a few rogues rough it alone--together they will suffer through the unforgiving night. 
+
+The code is very simple, using basic `ggplot` functions and the `penguins` dataset, recently added to base R.
+
+# TITLE 2
+
+```{r}
+#| cache: true
+library(Rcpp)
+
+sourceCpp(file = "unbox-grid.cpp")
+
+sample_canva2 <- function(seed = NULL, n = 4) {
+  if (!is.null(seed)) set.seed(seed)
+  sample(ggthemes::canva_palettes, 1)[[1]] |>
+    (\(x) colorRampPalette(x)(n))()
+}
+
+pretty_boxes <- function(
+  seed,
+  iterations = 100000000,
+  layers = 5,
+  pixels = 4000,
+  background = "black",
+  border = 4,
+  trim = .001
+) {
+  set.seed(seed)
+
+  mat <- unboxer_grid(
+    iterations = iterations,
+    layers = layers,
+    pixels = pixels,
+    border = border
+  )
+
+  shades <- c(background, sample_canva2(seed, n = 2047))
+
+  zlim <- quantile(mat, c(trim, 1 - trim))
+  mat[mat < zlim[1]] <- zlim[1]
+  mat[mat > zlim[2]] <- zlim[2]
+
+  op <- par(mar = c(0, 0, 0, 0))
+  image(
+    z = mat,
+    axes = FALSE,
+    asp = 1,
+    useRaster = TRUE,
+    col = shades
+  )
+  par(op)
+}
+
+pretty_boxes(0, iterations = 1e6, trim = 0)
+```
+
+_Ex nihilo, nihil fit_, or so they say, but in _TITLE 2_ darkness begets the blood of life. Squares, the keys to the universe, are seated within one another as stochastic swirls sway; soft magma particles, flecks of the future fly unabashed and fruitfully.
+
+I used Navarro's functions for making this artwork; I doubled the colour depth which I think induces more tones of red. I also didn't clip the image at all leading to a slightly rougher final product, which I like.

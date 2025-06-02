@@ -2,6 +2,12 @@
 title: "STAT 541 Portfolio"
 ---
 
-This is the home of my STAT 541 portfolio, and will be built out over the quarter. 
+This is the home of my STAT 541 portfolio, and will be built out over the quarter.
 
-Watch this space!
+Some details on how this site is built:
+
+This is a Quarto website, of course, using the `lux` Bootstrap theme with an LLM generated SCSS dark mode to match my other sites' background colour (#181a20). The site is under VCS, of course, and you can find the source on [GitHub](https://github.com/VisruthSK/STAT-541). I'm deploying the site under my Cloudflare domain, [visruth.com](https://www.visruth.com) so I use Cloudflare Pages in the build process. The Action script was mostly LLMd as well as this was one of the first times I've used GHA. The only interesting parts of the automated build are how I serve my dashboards.
+
+Both the dashboards are self-contained and use [client-side interactivity](https://www.visruth.com/blog/20250503-01/)--so all I really need to do is serve the rendered HTML from each repository. Each repository has its own Action which renders the dashboard and commits the HTML. I could've just copied over the two files from each repo, but that isn't cool (nor really reproducible), so I made the copying happen at website buildtime. The rendered dashboards are then simply copied into the static directory of the site.
+
+I don't think the workflow is particularly interesting but [Nik](https://ludic.mataroa.blog/) suggested I write about it, so here it is.

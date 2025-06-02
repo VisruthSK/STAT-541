@@ -10,7 +10,6 @@ website:
     left:
       - href: index.qmd
         text: Home
-      # - about.qmd
       - portfolio.qmd
     right:
       - icon: globe
@@ -22,7 +21,7 @@ website:
         aria-label: Bluesky
         target: _blank
       - icon: github
-        href: https://github.com/VisruthSK
+        href: https://github.com/VisruthSK/STAT-541
         aria-label: GitHub
         target: _blank
       - icon: linkedin
@@ -37,7 +36,6 @@ format:
       light: lux
     css: styles.css
     toc: true
-
 
 execute:
   freeze: auto

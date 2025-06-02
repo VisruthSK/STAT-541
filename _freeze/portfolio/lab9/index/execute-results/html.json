@@ -1,0 +1,15 @@
+{
+  "hash": "50242e85a906d0cbc034d2d261d9538c",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Lab 9\"\nauthor: \"Visruth\"\ndescription: \"Code is Art; Art from Code\"\ndate: \"2025.06.02\"\nwarning: false\ncode-fold: true\n---\n\n# Polar Moon\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse)\n\npenguins |>\n  drop_na() |>\n  ggplot(aes(x = bill_len, y = flipper_len, color = species)) +\n  geom_point(size = 3) +\n  geom_point(size = 1, color = \"black\", alpha = 0.3) +\n  coord_polar() +\n  theme_void() +\n  scale_color_brewer() +\n  theme(legend.position = \"none\")\n```\n\n::: {.cell-output-display}\n![](index_files/figure-html/unnamed-chunk-1-1.png){width=672}\n:::\n:::\n\n\nPenguins huddle tight in the arctic as chilly winds softly breath cold whispers into blue-black ears. _Polar Moon_ is a representation of the trials and tribulations of the arctic, serving as a reminder of the harshness of the outdoors and the warmth of community. The penguins queue into crescents, swaddling their kin--though a few rogues rough it alone--together they will suffer through the unforgiving night. \n\nThe code is very simple, using basic `ggplot` functions and the `penguins` dataset, recently added to base R.\n\n# TITLE 2\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(Rcpp)\n\nsourceCpp(file = \"unbox-grid.cpp\")\n\nsample_canva2 <- function(seed = NULL, n = 4) {\n  if (!is.null(seed)) set.seed(seed)\n  sample(ggthemes::canva_palettes, 1)[[1]] |>\n    (\\(x) colorRampPalette(x)(n))()\n}\n\npretty_boxes <- function(\n  seed,\n  iterations = 100000000,\n  layers = 5,\n  pixels = 4000,\n  background = \"black\",\n  border = 4,\n  trim = .001\n) {\n  set.seed(seed)\n\n  mat <- unboxer_grid(\n    iterations = iterations,\n    layers = layers,\n    pixels = pixels,\n    border = border\n  )\n\n  shades <- c(background, sample_canva2(seed, n = 2047))\n\n  zlim <- quantile(mat, c(trim, 1 - trim))\n  mat[mat < zlim[1]] <- zlim[1]\n  mat[mat > zlim[2]] <- zlim[2]\n\n  op <- par(mar = c(0, 0, 0, 0))\n  image(\n    z = mat,\n    axes = FALSE,\n    asp = 1,\n    useRaster = TRUE,\n    col = shades\n  )\n  par(op)\n}\n\npretty_boxes(0, iterations = 1e6, trim = 0)\n```\n\n::: {.cell-output-display}\n![](index_files/figure-html/unnamed-chunk-2-1.png){width=672}\n:::\n:::\n\n\n_Ex nihilo, nihil fit_, or so they say, but in _TITLE 2_ darkness begets the blood of life. Squares, the keys to the universe, are seated within one another as stochastic swirls sway; soft magma particles, flecks of the future fly unabashed and fruitfully.\n\nI used Navarro's functions for making this artwork; I doubled the colour depth which I think induces more tones of red. I also didn't clip the image at all leading to a slightly rougher final product, which I like.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
