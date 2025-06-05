@@ -2,6 +2,7 @@
 title: "Lab 6 - Spicy"
 description: "Fancy Functions"
 date: "2025.05.12"
+image: thumbnail.png
 ---
 
 This assignment will challenge your function writing abilities. I'm not going 

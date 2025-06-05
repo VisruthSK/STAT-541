@@ -3,6 +3,7 @@ title: "Lab 8"
 author: Visruth and Matt
 description: "Cheese, Gromit!"
 date: "2025.05.27"
+image: thumbnail.jpg
 ---
 
 > **Goal:** Scrape information from <https://www.cheese.com> to obtain a dataset

@@ -3,6 +3,7 @@ title: "Lab 7"
 author: "Matt and Visruth"
 description: "APIs & Space!"
 date: "2025.05.19"
+image: thumbnail.png
 ---
 
 ## Pass Times for U.S. State Captials
