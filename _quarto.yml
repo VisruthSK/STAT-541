@@ -38,8 +38,7 @@ format:
     toc: true
 
 execute:
-  freeze: true
-  # should be auto, but cheese.com is down so can't re-render lab8.
+  freeze: auto
 
 resources:
   - "data/*"
